@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace MyCalculator
 {
-    /*      计算器 MyCalculator
+    /*      计算器 MyCalculator v0.2
      * 思路:用几个变量把输入的值保存起来，然后进行加减乘除等各种运算；
      * 得到的结果用一个变量保存起来，输出到结果。
      * 变量1： double 操作数1
@@ -40,79 +40,6 @@ namespace MyCalculator
             currentValue = Convert.ToDouble(lblResult.Text);
         }
 
-
-        /// <summary>
-        /// 保存输入数字，并计算结果缓存起来,按下运算符则保存算式
-        /// </summary>
-        /// <param name="inputNum"></param>
-        /// <param name="sign"></param>
-        public void SaveInputed(string inputNum, string sign)
-        {
-            //TODO:
-            //1.显示输入的表达式
-            //2.输入过运算符号之后，继续输入运算符，就用新的运算符代替旧的运算符
-        }
-
-        #region 数字0-9
-        private void btnOne_Click(object sender, EventArgs e)
-        {
-            NumberClick(btnOne.Text);
-
-        }
-
-        private void btnTwo_Click(object sender, EventArgs e)
-        {
-            NumberClick(btnTwo.Text);
-        }
-
-        private void btnThree_Click(object sender, EventArgs e)
-        {
-            NumberClick(btnThree.Text);
-        }
-
-        private void btnFour_Click(object sender, EventArgs e)
-        {
-            NumberClick(btnFour.Text);
-        }
-
-        private void btnFive_Click(object sender, EventArgs e)
-        {
-            NumberClick(btnFive.Text);
-        }
-
-        private void btnSix_Click(object sender, EventArgs e)
-        {
-            NumberClick(btnSix.Text);
-        }
-
-        private void btnSeven_Click(object sender, EventArgs e)
-        {
-            NumberClick(btnSeven.Text);
-        }
-
-        private void btnEight_Click(object sender, EventArgs e)
-        {
-            NumberClick(btnEight.Text);
-        }
-
-        private void btnNine_Click(object sender, EventArgs e)
-        {
-            NumberClick(btnNine.Text);
-        }
-
-        private void btnZero_Click(object sender, EventArgs e)
-        {
-            NumberClick(btnZero.Text);
-        }
-        #endregion
-
-        private void btnDot_Click(object sender, EventArgs e)
-        {
-            lblResult.Text = lblResult.Text + ".";
-        }
-
-
-
         /// <summary>
         /// 按符号按钮的时候
         /// </summary>
@@ -126,7 +53,8 @@ namespace MyCalculator
             }
             else
             {
-                numSum = double.Parse(lblResult.Text);
+                //numSum = double.Parse(lblResult.Text);
+                double.TryParse(lblResult.Text, out numSum);
             }
             lblResult.Text = "";
             currentOperator = op;
@@ -182,6 +110,77 @@ namespace MyCalculator
         }
 
 
+        /// <summary>
+        /// 保存输入数字，并计算结果缓存起来,按下运算符则保存算式
+        /// </summary>
+        /// <param name="inputNum"></param>
+        /// <param name="sign"></param>
+        public void SaveInputed(string inputNum, string sign)
+        {
+            //TODO:
+            //1.显示输入的表达式
+            //2.输入过运算符号之后，继续输入运算符，就用新的运算符代替旧的运算符
+        }
+
+        #region 数字0-9 + 小数点
+        private void btnOne_Click(object sender, EventArgs e)
+        {
+            NumberClick(btnOne.Text);
+
+        }
+
+        private void btnTwo_Click(object sender, EventArgs e)
+        {
+            NumberClick(btnTwo.Text);
+        }
+
+        private void btnThree_Click(object sender, EventArgs e)
+        {
+            NumberClick(btnThree.Text);
+        }
+
+        private void btnFour_Click(object sender, EventArgs e)
+        {
+            NumberClick(btnFour.Text);
+        }
+
+        private void btnFive_Click(object sender, EventArgs e)
+        {
+            NumberClick(btnFive.Text);
+        }
+
+        private void btnSix_Click(object sender, EventArgs e)
+        {
+            NumberClick(btnSix.Text);
+        }
+
+        private void btnSeven_Click(object sender, EventArgs e)
+        {
+            NumberClick(btnSeven.Text);
+        }
+
+        private void btnEight_Click(object sender, EventArgs e)
+        {
+            NumberClick(btnEight.Text);
+        }
+
+        private void btnNine_Click(object sender, EventArgs e)
+        {
+            NumberClick(btnNine.Text);
+        }
+
+        private void btnZero_Click(object sender, EventArgs e)
+        {
+            NumberClick(btnZero.Text);
+        }
+        
+        private void btnDot_Click(object sender, EventArgs e)
+        {
+            lblResult.Text = lblResult.Text + ".";
+        }
+        #endregion
+
+        #region 按钮加减乘除
         private void btnPlus_Click(object sender, EventArgs e)
         {
             OperatorClick(EnumOperator.Add);
@@ -203,7 +202,9 @@ namespace MyCalculator
             OperatorClick(EnumOperator.Divide);
 
         }
+        #endregion
 
+        #region 按钮 等于、退格、清除
         private void btnDel_Click(object sender, EventArgs e)
         {
             if (lblResult.Text == "" || lblResult.Text == "0")
@@ -227,6 +228,7 @@ namespace MyCalculator
         {
             Evaluate();
             lblResult.Text = numSum.ToString();
-        }
+        } 
+        #endregion
     }
 }
