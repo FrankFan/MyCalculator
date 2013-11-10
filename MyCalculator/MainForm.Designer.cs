@@ -51,18 +51,28 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblResult = new System.Windows.Forms.Label();
             this.lblEquation = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.复制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemPaste = new System.Windows.Forms.ToolStripMenuItem();
+            this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemAboutCalc = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemAboutComputer = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(10, 130);
+            this.tabControl1.Location = new System.Drawing.Point(10, 113);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(324, 311);
+            this.tabControl1.Size = new System.Drawing.Size(311, 311);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -88,74 +98,88 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(316, 285);
+            this.tabPage1.Size = new System.Drawing.Size(303, 285);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "标准";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnMutiple
             // 
-            this.btnMutiple.Location = new System.Drawing.Point(233, 18);
+            this.btnMutiple.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnMutiple.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnMutiple.Location = new System.Drawing.Point(226, 18);
             this.btnMutiple.Name = "btnMutiple";
             this.btnMutiple.Size = new System.Drawing.Size(63, 47);
             this.btnMutiple.TabIndex = 0;
             this.btnMutiple.Text = "×";
-            this.btnMutiple.UseVisualStyleBackColor = true;
+            this.btnMutiple.UseVisualStyleBackColor = false;
             this.btnMutiple.Click += new System.EventHandler(this.btnMutiply_Click);
             // 
             // btnDevide
             // 
-            this.btnDevide.Location = new System.Drawing.Point(162, 18);
+            this.btnDevide.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnDevide.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDevide.Location = new System.Drawing.Point(155, 18);
             this.btnDevide.Name = "btnDevide";
             this.btnDevide.Size = new System.Drawing.Size(63, 47);
             this.btnDevide.TabIndex = 0;
             this.btnDevide.Text = "÷";
-            this.btnDevide.UseVisualStyleBackColor = true;
+            this.btnDevide.UseVisualStyleBackColor = false;
             this.btnDevide.Click += new System.EventHandler(this.btnDevide_Click);
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(91, 18);
+            this.btnDel.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnDel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDel.ForeColor = System.Drawing.Color.DimGray;
+            this.btnDel.Location = new System.Drawing.Point(84, 18);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(63, 47);
             this.btnDel.TabIndex = 0;
             this.btnDel.Text = "DEL";
-            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.UseVisualStyleBackColor = false;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnEqueal
             // 
-            this.btnEqueal.Location = new System.Drawing.Point(233, 172);
+            this.btnEqueal.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnEqueal.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnEqueal.ForeColor = System.Drawing.Color.White;
+            this.btnEqueal.Location = new System.Drawing.Point(226, 172);
             this.btnEqueal.Name = "btnEqueal";
             this.btnEqueal.Size = new System.Drawing.Size(60, 94);
             this.btnEqueal.TabIndex = 0;
             this.btnEqueal.Text = "=";
-            this.btnEqueal.UseVisualStyleBackColor = true;
+            this.btnEqueal.UseVisualStyleBackColor = false;
             this.btnEqueal.Click += new System.EventHandler(this.btnEqual_Click);
             // 
             // btnPlus
             // 
-            this.btnPlus.Location = new System.Drawing.Point(233, 119);
+            this.btnPlus.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnPlus.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnPlus.Location = new System.Drawing.Point(226, 119);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(63, 47);
             this.btnPlus.TabIndex = 0;
             this.btnPlus.Text = "+";
-            this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.UseVisualStyleBackColor = false;
             this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
             // btnMinus
             // 
-            this.btnMinus.Location = new System.Drawing.Point(233, 69);
+            this.btnMinus.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnMinus.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnMinus.Location = new System.Drawing.Point(226, 69);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(63, 47);
             this.btnMinus.TabIndex = 0;
             this.btnMinus.Text = "-";
-            this.btnMinus.UseVisualStyleBackColor = true;
+            this.btnMinus.UseVisualStyleBackColor = false;
             this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
             // 
             // btnThree
             // 
-            this.btnThree.Location = new System.Drawing.Point(162, 168);
+            this.btnThree.Location = new System.Drawing.Point(155, 168);
             this.btnThree.Name = "btnThree";
             this.btnThree.Size = new System.Drawing.Size(63, 47);
             this.btnThree.TabIndex = 0;
@@ -165,7 +189,7 @@
             // 
             // btnSix
             // 
-            this.btnSix.Location = new System.Drawing.Point(162, 119);
+            this.btnSix.Location = new System.Drawing.Point(155, 119);
             this.btnSix.Name = "btnSix";
             this.btnSix.Size = new System.Drawing.Size(63, 47);
             this.btnSix.TabIndex = 0;
@@ -175,7 +199,7 @@
             // 
             // btnNine
             // 
-            this.btnNine.Location = new System.Drawing.Point(162, 69);
+            this.btnNine.Location = new System.Drawing.Point(155, 69);
             this.btnNine.Name = "btnNine";
             this.btnNine.Size = new System.Drawing.Size(63, 47);
             this.btnNine.TabIndex = 0;
@@ -186,7 +210,7 @@
             // btnDot
             // 
             this.btnDot.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnDot.Location = new System.Drawing.Point(162, 219);
+            this.btnDot.Location = new System.Drawing.Point(155, 219);
             this.btnDot.Name = "btnDot";
             this.btnDot.Size = new System.Drawing.Size(63, 47);
             this.btnDot.TabIndex = 0;
@@ -196,7 +220,7 @@
             // 
             // btnTwo
             // 
-            this.btnTwo.Location = new System.Drawing.Point(91, 168);
+            this.btnTwo.Location = new System.Drawing.Point(84, 168);
             this.btnTwo.Name = "btnTwo";
             this.btnTwo.Size = new System.Drawing.Size(63, 47);
             this.btnTwo.TabIndex = 0;
@@ -206,7 +230,7 @@
             // 
             // btnFive
             // 
-            this.btnFive.Location = new System.Drawing.Point(91, 119);
+            this.btnFive.Location = new System.Drawing.Point(84, 119);
             this.btnFive.Name = "btnFive";
             this.btnFive.Size = new System.Drawing.Size(63, 47);
             this.btnFive.TabIndex = 0;
@@ -216,7 +240,7 @@
             // 
             // btnEight
             // 
-            this.btnEight.Location = new System.Drawing.Point(91, 69);
+            this.btnEight.Location = new System.Drawing.Point(84, 69);
             this.btnEight.Name = "btnEight";
             this.btnEight.Size = new System.Drawing.Size(63, 47);
             this.btnEight.TabIndex = 0;
@@ -226,7 +250,7 @@
             // 
             // btnZero
             // 
-            this.btnZero.Location = new System.Drawing.Point(21, 219);
+            this.btnZero.Location = new System.Drawing.Point(14, 219);
             this.btnZero.Name = "btnZero";
             this.btnZero.Size = new System.Drawing.Size(133, 47);
             this.btnZero.TabIndex = 0;
@@ -236,7 +260,7 @@
             // 
             // btnOne
             // 
-            this.btnOne.Location = new System.Drawing.Point(21, 168);
+            this.btnOne.Location = new System.Drawing.Point(14, 168);
             this.btnOne.Name = "btnOne";
             this.btnOne.Size = new System.Drawing.Size(63, 47);
             this.btnOne.TabIndex = 0;
@@ -246,7 +270,7 @@
             // 
             // btnFour
             // 
-            this.btnFour.Location = new System.Drawing.Point(21, 119);
+            this.btnFour.Location = new System.Drawing.Point(14, 119);
             this.btnFour.Name = "btnFour";
             this.btnFour.Size = new System.Drawing.Size(63, 47);
             this.btnFour.TabIndex = 0;
@@ -256,7 +280,7 @@
             // 
             // btnSeven
             // 
-            this.btnSeven.Location = new System.Drawing.Point(21, 69);
+            this.btnSeven.Location = new System.Drawing.Point(14, 69);
             this.btnSeven.Name = "btnSeven";
             this.btnSeven.Size = new System.Drawing.Size(63, 47);
             this.btnSeven.TabIndex = 0;
@@ -266,12 +290,15 @@
             // 
             // btnC
             // 
-            this.btnC.Location = new System.Drawing.Point(21, 18);
+            this.btnC.BackColor = System.Drawing.Color.LightGray;
+            this.btnC.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnC.ForeColor = System.Drawing.Color.OrangeRed;
+            this.btnC.Location = new System.Drawing.Point(14, 18);
             this.btnC.Name = "btnC";
             this.btnC.Size = new System.Drawing.Size(63, 47);
             this.btnC.TabIndex = 0;
             this.btnC.Text = "C";
-            this.btnC.UseVisualStyleBackColor = true;
+            this.btnC.UseVisualStyleBackColor = false;
             this.btnC.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // tabPage2
@@ -279,7 +306,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(316, 285);
+            this.tabPage2.Size = new System.Drawing.Size(303, 285);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "科学";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -289,34 +316,117 @@
             this.lblResult.BackColor = System.Drawing.Color.White;
             this.lblResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblResult.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblResult.Location = new System.Drawing.Point(10, 38);
+            this.lblResult.Location = new System.Drawing.Point(10, 34);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(320, 64);
+            this.lblResult.Size = new System.Drawing.Size(307, 64);
             this.lblResult.TabIndex = 2;
             this.lblResult.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // lblEquation
             // 
-            this.lblEquation.AutoSize = true;
+            this.lblEquation.AutoEllipsis = true;
             this.lblEquation.BackColor = System.Drawing.Color.White;
             this.lblEquation.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblEquation.Location = new System.Drawing.Point(278, 51);
+            this.lblEquation.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblEquation.Location = new System.Drawing.Point(12, 42);
             this.lblEquation.Name = "lblEquation";
-            this.lblEquation.Size = new System.Drawing.Size(0, 20);
+            this.lblEquation.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblEquation.Size = new System.Drawing.Size(305, 20);
             this.lblEquation.TabIndex = 3;
+            this.lblEquation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.文件ToolStripMenuItem,
+            this.编辑ToolStripMenuItem,
+            this.关于ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(323, 25);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 文件ToolStripMenuItem
+            // 
+            this.文件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.退出XToolStripMenuItem});
+            this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
+            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.文件ToolStripMenuItem.Text = "文件";
+            // 
+            // 退出XToolStripMenuItem
+            // 
+            this.退出XToolStripMenuItem.Name = "退出XToolStripMenuItem";
+            this.退出XToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.退出XToolStripMenuItem.Text = "退出(X)";
+            this.退出XToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItemExit_Click);
+            // 
+            // 编辑ToolStripMenuItem
+            // 
+            this.编辑ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.复制ToolStripMenuItem,
+            this.ToolStripMenuItemPaste});
+            this.编辑ToolStripMenuItem.Name = "编辑ToolStripMenuItem";
+            this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.编辑ToolStripMenuItem.Text = "编辑";
+            // 
+            // 复制ToolStripMenuItem
+            // 
+            this.复制ToolStripMenuItem.Name = "复制ToolStripMenuItem";
+            this.复制ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.复制ToolStripMenuItem.Text = "复制";
+            this.复制ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItemCopy_Click);
+            // 
+            // ToolStripMenuItemPaste
+            // 
+            this.ToolStripMenuItemPaste.Name = "ToolStripMenuItemPaste";
+            this.ToolStripMenuItemPaste.Size = new System.Drawing.Size(100, 22);
+            this.ToolStripMenuItemPaste.Text = "粘贴";
+            this.ToolStripMenuItemPaste.Click += new System.EventHandler(this.ToolStripMenuItemPaste_Click);
+            // 
+            // 关于ToolStripMenuItem
+            // 
+            this.关于ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemAboutCalc,
+            this.ToolStripMenuItemAboutComputer});
+            this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
+            this.关于ToolStripMenuItem.Text = "帮助(H)";
+            // 
+            // ToolStripMenuItemAboutCalc
+            // 
+            this.ToolStripMenuItemAboutCalc.Name = "ToolStripMenuItemAboutCalc";
+            this.ToolStripMenuItemAboutCalc.Size = new System.Drawing.Size(152, 22);
+            this.ToolStripMenuItemAboutCalc.Text = "关于计算器";
+            this.ToolStripMenuItemAboutCalc.Click += new System.EventHandler(this.ToolStripMenuItemAboutCalc_Click);
+            // 
+            // ToolStripMenuItemAboutComputer
+            // 
+            this.ToolStripMenuItemAboutComputer.Name = "ToolStripMenuItemAboutComputer";
+            this.ToolStripMenuItemAboutComputer.Size = new System.Drawing.Size(152, 22);
+            this.ToolStripMenuItemAboutComputer.Text = "关于电脑";
+            this.ToolStripMenuItemAboutComputer.Click += new System.EventHandler(this.ToolStripMenuItemAboutComputer_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 453);
+            this.ClientSize = new System.Drawing.Size(323, 432);
             this.Controls.Add(this.lblEquation);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "我的计算器 V1.0";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,6 +457,15 @@
         private System.Windows.Forms.Button btnC;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Label lblEquation;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 文件ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 编辑ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 复制ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemAboutCalc;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemAboutComputer;
+        private System.Windows.Forms.ToolStripMenuItem 退出XToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPaste;
     }
 }
 

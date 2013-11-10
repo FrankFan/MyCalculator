@@ -28,8 +28,9 @@ namespace MyCalculator
         double currentValue = 0;   //第1个数        
         double numSum = 0;  //第2个数
         private EnumOperator currentOperator; //当前操作符
+        private string strDisplay = string.Empty; //记录运算符
+        private string tempData = string.Empty;//复制数据用
 
-        
         /// <summary>
         /// 按数字的时候
         /// </summary>
@@ -38,6 +39,8 @@ namespace MyCalculator
         {
             lblResult.Text = lblResult.Text + strNumber;
             currentValue = Convert.ToDouble(lblResult.Text);
+
+            lblEquation.Text += strNumber;
         }
 
         /// <summary>
@@ -56,8 +59,48 @@ namespace MyCalculator
                 //numSum = double.Parse(lblResult.Text);
                 double.TryParse(lblResult.Text, out numSum);
             }
+
+            DisplayOperator(op);
+
             lblResult.Text = "";
             currentOperator = op;
+
+
+        }
+
+        private void DisplayOperator(EnumOperator op)
+        {
+            switch (op)
+            {
+                case EnumOperator.None:
+                    lblEquation.Text = lblResult.Text;
+                    lblEquation.Text += "";
+                    break;
+                case EnumOperator.Add:
+                    if (lblResult.Text != "")
+                    {
+                        lblEquation.Text = lblResult.Text;
+                    }
+                    lblEquation.Text += "+";
+                    break;
+                case EnumOperator.Minus:
+                    if (lblResult.Text != "")
+                    {
+                        lblEquation.Text = lblResult.Text;
+                    }
+                    lblEquation.Text += "-";
+                    break;
+                case EnumOperator.Multiply:
+                    lblEquation.Text = lblResult.Text;
+                    lblEquation.Text += "x";
+                    break;
+                case EnumOperator.Divide:
+                    lblEquation.Text = lblResult.Text;
+                    lblEquation.Text += "÷";
+                    break;
+                default:
+                    break;
+            }
         }
 
         /// <summary>
@@ -173,10 +216,14 @@ namespace MyCalculator
         {
             NumberClick(btnZero.Text);
         }
-        
+
         private void btnDot_Click(object sender, EventArgs e)
         {
-            lblResult.Text = lblResult.Text + ".";
+            if (!lblEquation.Text.Contains(".") && !lblResult.Text.Contains("."))
+            {
+                lblResult.Text = lblResult.Text + ".";
+                lblEquation.Text += ".";
+            }
         }
         #endregion
 
@@ -215,12 +262,27 @@ namespace MyCalculator
             {
                 lblResult.Text = lblResult.Text.Substring(0, lblResult.Text.Length - 1);
             }
+
+            if (lblEquation.Text == "" || lblEquation.Text == "0")
+            {
+                lblEquation.Text = "";
+            }
+            else
+            {
+                lblEquation.Text = lblEquation.Text.Substring(0, lblEquation.Text.Length - 1);
+            }
+
+            string tmp = currentValue.ToString();
+            tmp = tmp.Substring(0, tmp.Length - 1);
+            Double.TryParse(tmp, out currentValue);
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             currentOperator = EnumOperator.None;
             lblResult.Text = "";
+            lblEquation.Text = "";
             numSum = 0;
         }
 
@@ -228,7 +290,47 @@ namespace MyCalculator
         {
             Evaluate();
             lblResult.Text = numSum.ToString();
-        } 
+
+            //防止重复按 = 
+            if (lblEquation.Text.Length > 1 && lblEquation.Text.Substring(lblEquation.Text.Length - 1) != "=")
+            {
+                lblEquation.Text += "=";
+            }
+        }
         #endregion
+
+        private void ToolStripMenuItemCopy_Click(object sender, EventArgs e)
+        {
+            tempData = lblResult.Text;
+            if (!string.IsNullOrEmpty(tempData))
+            {
+                Clipboard.SetDataObject(tempData);
+            }
+        }
+
+        private void ToolStripMenuItemPaste_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(tempData))
+            {
+                lblResult.Text = tempData;
+                //IDataObject clipboardData = Clipboard.GetDataObject();
+            }
+        }
+
+        private void ToolStripMenuItemExit_Click(object sender, EventArgs e)
+        {
+            this.FindForm().Close();
+        }
+
+        private void ToolStripMenuItemAboutCalc_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("一个简单的计算器\r\n Author:fanyong@gmail.com ", "关于", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void ToolStripMenuItemAboutComputer_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("嗯，这是一台好电脑！ ", "关于", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
     }
 }
