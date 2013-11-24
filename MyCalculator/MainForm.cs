@@ -332,5 +332,6 @@ namespace MyCalculator
             MessageBox.Show("嗯，这是一台好电脑！ ", "关于", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+
     }
 }

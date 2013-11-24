@@ -48,6 +48,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mainform2.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Operation.cs" />
     <Compile Include="OperationAdd.cs" />
     <Compile Include="OperationDiv.cs" />
