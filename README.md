@@ -25,6 +25,6 @@ v0.3
 * 科学计算器由于按钮太多，给每个按钮都添加一个Click事件是一件很傻的事。改进方法是让所有的Button公用同一个OnClick事件。
 
 **** 图片
-[](http://images.cnitblog.com/blog/282019/201401/06230635-93acc1a316bc4da384439e2978ef6467.png) <br/>
+![](http://images.cnitblog.com/blog/282019/201401/06230635-93acc1a316bc4da384439e2978ef6467.png) <br/>
 
-[](http://images.cnitblog.com/blog/282019/201401/06230651-cb6e212f407f46c6b5c48db10fe94142.png)
+![](http://images.cnitblog.com/blog/282019/201401/06230651-cb6e212f407f46c6b5c48db10fe94142.png)
