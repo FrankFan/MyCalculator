@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Threading;
 
 namespace MyCalculator
 {
@@ -30,6 +32,8 @@ namespace MyCalculator
         private EnumOperator currentOperator; //当前操作符
         private string strDisplay = string.Empty; //记录运算符
         private string tempData = string.Empty;//复制数据用
+
+         
 
         /// <summary>
         /// 按数字的时候
@@ -327,11 +331,39 @@ namespace MyCalculator
             MessageBox.Show("一个简单的计算器\r\n Author:fanyong@gmail.com ", "关于", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        //声明一个委托
+        delegate string GetInfo();
+
         private void ToolStripMenuItemAboutComputer_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("嗯，这是一台好电脑！ ", "关于", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //将方法指向委托
+            GetInfo task = GetSystemInfo;
+
+            //开始异步执行方法，执行完毕，在回调方法中完成后面的任务
+            task.BeginInvoke(GetSystemInfoCompleted, task);           
         }
 
+        /// <summary>
+        /// 在回调方法中执行Show方法，不会卡住GUI界面
+        /// XXXCompleted() 和 XXX方法对应
+        /// </summary>
+        /// <param name="asyncResult"></param>
+        private void GetSystemInfoCompleted(IAsyncResult asyncResult)
+        {
+            if (asyncResult == null)
+                return;
+            string strInfo = (asyncResult.AsyncState as GetInfo).EndInvoke(asyncResult).ToString();
+
+            MessageBox.Show(strInfo, "关于我的电脑", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        string GetSystemInfo()
+        {
+            //显示系统信息            
+            return SystemInfo.GetSystemInfo();
+        }
+
+        
 
     }
 }
